@@ -19,7 +19,7 @@ import {
 	Vector3,
 	WebGLRenderer,
 	LinearToneMapping,
-	ACESFilmicToneMapping,
+	ACESFilmicToneMapping, TextureLoader, ShaderMaterial
 } from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -33,6 +33,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GUI } from 'dat.gui';
 
 import { environments } from './environments.js';
+import * as THREE from 'three';
 
 const DEFAULT_CAMERA = '[default]';
 
@@ -75,6 +76,7 @@ export class Viewer {
 			skeleton: false,
 			grid: false,
 			autoRotate: false,
+			riten: false,
 
 			// Lights
 			punctualLights: true,
@@ -106,6 +108,8 @@ export class Viewer {
 		this.activeCamera = this.defaultCamera;
 		this.scene.add(this.defaultCamera);
 
+		this.updateGround();
+
 		this.renderer = window.renderer = new WebGLRenderer({ antialias: true });
 		this.renderer.setClearColor(0xcccccc);
 		this.renderer.setPixelRatio(window.devicePixelRatio);
@@ -130,6 +134,7 @@ export class Viewer {
 		this.skeletonHelpers = [];
 		this.gridHelper = null;
 		this.axesHelper = null;
+		this.ritenHelper = null;
 
 		this.addAxesHelper();
 		this.addGUI();
@@ -148,18 +153,24 @@ export class Viewer {
 		this.controls.update();
 		this.stats.update();
 		this.mixer && this.mixer.update(dt);
-		this.render();
+		this.render(dt);
 
 		this.prevTime = time;
 	}
 
-	render() {
+	render(dt) {
 		this.renderer.render(this.scene, this.activeCamera);
 		if (this.state.grid) {
 			this.axesCamera.position.copy(this.defaultCamera.position);
 			this.axesCamera.lookAt(this.axesScene.position);
 			this.axesRenderer.render(this.axesScene, this.axesCamera);
 		}
+
+		this.scene.traverse(obj => {
+			if (obj.type === 'Mesh' && obj.material.type === 'ShaderMaterial') {
+				obj.material.uniforms['time'].value += dt;
+			}
+		})
 	}
 
 	resize() {
@@ -297,6 +308,8 @@ export class Viewer {
 			}
 		});
 
+		this.setMaterial();
+
 		this.setClips(clips);
 
 		this.updateLights();
@@ -310,7 +323,7 @@ export class Viewer {
 	}
 
 	printGraph(node) {
-		console.group(' <' + node.type + '> ' + node.name);
+		console.group(' <' + node.type + '> ' + node.name + ', node detail: ' + JSON.stringify(node.userData));
 		node.children.forEach((child) => this.printGraph(child));
 		console.groupEnd();
 	}
@@ -482,11 +495,389 @@ export class Viewer {
 			}
 		}
 
+		if (this.state.riten !== Boolean(this.ritenHelper)) {
+			if (this.state.riten) {
+
+
+
+				//
+				//
+				// this.gridHelper = new GridHelper();
+				// this.axesHelper = new AxesHelper();
+				// this.axesHelper.renderOrder = 999;
+				// this.axesHelper.onBeforeRender = (renderer) => renderer.clearDepth();
+				// this.scene.add(this.gridHelper);
+				// this.scene.add(this.axesHelper);
+			} else {
+
+
+
+				// this.scene.remove(this.gridHelper);
+				// this.scene.remove(this.axesHelper);
+				// this.gridHelper = null;
+				// this.axesHelper = null;
+				// this.axesRenderer.clear();
+			}
+		}
+
 		this.controls.autoRotate = this.state.autoRotate;
 	}
 
 	updateBackground() {
 		this.backgroundColor.set(this.state.bgColor);
+	}
+
+	updateGround() {
+		let groundReflect = false;
+		const animationType = 'flow';// 默认flow为扫光，rotation为旋转
+
+		const grounds = [
+			{
+				"code": "g1648710934744",
+				"name": "特效地面1620697703762",
+				"url": "/icon_20210625174703331_294105.png",
+				"color": "rgba(50,138,207,1)",
+				"opacity": 1,
+				"maskUrl": "/光1.png",
+				"flowColor": "rgba(121,255,217,1)",
+				"glowFactor": 8.7,
+				"animationSpeed": 1,
+				"groundClearance": -1,
+				"repeatFactorX": 10,
+				"repeatFactorY": 10
+			},
+			{
+				"code": "g1648710934744",
+				"name": "特效地面1624614479485",
+				"url": "/icon_20210625174822322_937383.png",
+				"color": "rgba(50,138,207,1)",
+				"opacity": 0,
+				"maskUrl": "/光1.png",
+				"flowColor": "rgba(133,255,255,1)",
+				"glowFactor": 3.9,
+				"animationSpeed": 0.5,
+				"groundClearance": 0,
+				"repeatFactorX": 10,
+				"repeatFactorY": 10
+			},
+			{
+				"code": "g1648710934744",
+				"name": "特效地面1624614663498",
+				"url": "/icon_20210625175116741_958937.png",
+				"color": "rgba(43,76,145,1)",
+				"opacity": 0,
+				"maskUrl": "/光1.png",
+				"flowColor": "rgba(134,255,236,1)",
+				"glowFactor": 7.9,
+				"animationSpeed": 0.5,
+				"groundClearance": -1,
+				"repeatFactorX": 20,
+				"repeatFactorY": 20
+			},
+			{
+				"code": "g1648710934744",
+				"name": "特效地面1624614711238",
+				"url": "/icon_20210625175205515_73731.png",
+				"color": "rgba(51,120,183,1)",
+				"opacity": 1,
+				"maskUrl": "/光1.png",
+				"flowColor": "#ffffff",
+				"glowFactor": 0,
+				"animationSpeed": 1,
+				"groundClearance": -1,
+				"repeatFactorX": 20,
+				"repeatFactorY": 20
+			},
+			{
+				"code": "g1648710934744",
+				"name": "特效地面1642833955417",
+				"url": "/icon_20210407163008223_378401.png",
+				"color": "rgba(24,24,24,1)",
+				"opacity": 0.97,
+				"repeatFactorX": 30,
+				"repeatFactorY": 30,
+				"maskUrl": "/光1.png",
+				"flowColor": "#ffffff",
+				"glowFactor": 0,
+				"animationSpeed": 1,
+				"groundClearance": -3
+			},
+			{
+				"code": "g1648710934744",
+				"name": "特效地面1642834096513",
+				"url": "/地板面02.png",
+				"color": "rgba(8,13,22,1)",
+				"opacity": 0.6,
+				"repeatFactorX": 30,
+				"repeatFactorY": 30,
+				"maskUrl": "/光1.png",
+				"flowColor": "#ffffff",
+				"glowFactor": 0,
+				"animationSpeed": 1,
+				"groundClearance": -3
+			}
+		];
+		grounds.push({
+				"code": "g1648711184165",
+				"name": "特效地面1620697703762",
+				"url": "/icon_20210625174703331_294105.png",
+				"color": "rgba(50,138,207,1)",
+				"opacity": 1,
+				"maskUrl": "/光1.png",
+				"flowColor": "rgba(121,255,217,1)",
+				"glowFactor": 8.7,
+				"animationSpeed": 1,
+				"groundClearance": -1,
+				"repeatFactorX": 10,
+				"repeatFactorY": 10
+			},
+			{
+				"code": "g1648711184165",
+				"name": "特效地面1624614479485",
+				"url": "/icon_20210625174822322_937383.png",
+				"color": "rgba(50,138,207,1)",
+				"opacity": 0,
+				"maskUrl": "/光1.png",
+				"flowColor": "rgba(133,255,255,1)",
+				"glowFactor": 3.9,
+				"animationSpeed": 0.5,
+				"groundClearance": 0,
+				"repeatFactorX": 10,
+				"repeatFactorY": 10
+			},
+			{
+				"code": "g1648711184165",
+				"name": "特效地面1624614663498",
+				"url": "/icon_20210625175116741_958937.png",
+				"color": "rgba(43,76,145,1)",
+				"opacity": 0,
+				"maskUrl": "/光1.png",
+				"flowColor": "rgba(134,255,236,1)",
+				"glowFactor": 7.9,
+				"animationSpeed": 0.5,
+				"groundClearance": -1,
+				"repeatFactorX": 20,
+				"repeatFactorY": 20
+			},
+			{
+				"code": "g1648711184165",
+				"name": "特效地面1624614711238",
+				"url": "/icon_20210625175205515_73731.png",
+				"color": "rgba(51,120,183,1)",
+				"opacity": 1,
+				"maskUrl": "/光1.png",
+				"flowColor": "#ffffff",
+				"glowFactor": 0,
+				"animationSpeed": 1,
+				"groundClearance": -1,
+				"repeatFactorX": 20,
+				"repeatFactorY": 20
+			},
+			{
+				"code": "g1648711184165",
+				"name": "特效地面1642833955417",
+				"url": "/icon_20210407163008223_378401.png",
+				"color": "rgba(24,24,24,1)",
+				"opacity": 0.97,
+				"repeatFactorX": 30,
+				"repeatFactorY": 30,
+				"maskUrl": "/光1.png",
+				"flowColor": "#ffffff",
+				"glowFactor": 0,
+				"animationSpeed": 1,
+				"groundClearance": -3
+			},
+			{
+				"code": "g1648711184165",
+				"name": "特效地面1642834096513",
+				"url": "/地板面02.png",
+				"color": "rgba(8,13,22,1)",
+				"opacity": 0.6,
+				"repeatFactorX": 30,
+				"repeatFactorY": 30,
+				"maskUrl": "/光1.png",
+				"flowColor": "#ffffff",
+				"glowFactor": 0,
+				"animationSpeed": 1,
+				"groundClearance": -3
+			});
+
+		var vertShaderReflect = `
+                        
+    #include <common>
+    #include <logdepthbuf_pars_vertex>
+    void main() {
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.);
+      #include <logdepthbuf_vertex>
+    }
+      
+                    `;
+
+		var vertShaderDefault = `
+                    #include <common>
+					#include <logdepthbuf_pars_vertex>
+					varying vec2 vUv;
+					varying vec2 mapUv;
+					
+					uniform vec2 repeatFactor;
+				
+					void main() {
+					  gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.);
+				
+					  vUv=uv;
+					  mapUv=uv*repeatFactor;
+					  #include <logdepthbuf_vertex>
+					}
+                `;
+
+		var fragShaderReflect = `
+                        
+    #include <logdepthbuf_pars_fragment>  
+    void main() {  
+      gl_FragColor= vec4(1.,1.,1.,0.); 
+      #include <logdepthbuf_fragment>                     
+    }
+      
+                    `;
+
+		var fragShaderFlow = `
+                    #include <logdepthbuf_pars_fragment>
+					varying vec2 vUv;
+					varying vec2 mapUv;  
+					uniform sampler2D map; 
+					uniform sampler2D maskMap; 
+					uniform float time; 
+					uniform float opacity;
+					uniform float alpha; 
+					uniform vec3 color; 
+					uniform vec3 flowColor; 
+					uniform float glowFactor; 
+					uniform float speed;  
+					void main() {   
+					  float t=mod(time/5.*speed,1.);       
+					  vec2 uv=abs((vUv-vec2(0.5))*2.0); 
+					  float dis = length(uv); 
+					  float r = t-dis;  
+					  vec4 col=texture2D( map, mapUv ); 
+					  vec3 finalCol; 
+					  vec4 mask = texture2D(maskMap, vec2(0.5,r)); 
+					  finalCol = mix(color,flowColor,clamp(0.,1.,mask.a*glowFactor)); 
+					  gl_FragColor= vec4(finalCol.rgb,(alpha+mask.a*glowFactor)*col.a*(1.-dis)*opacity);
+					  #include <logdepthbuf_fragment>
+					}
+                `;
+
+		var fragShaderRotation = `
+                    
+    #include <logdepthbuf_pars_fragment>
+    varying vec2 vUv; 
+    varying vec2 mapUv; 
+    uniform sampler2D map; 
+    uniform sampler2D maskMap; 
+    uniform float time; 
+    uniform float opacity;
+    uniform float alpha; 
+    uniform vec3 color; 
+    uniform vec3 flowColor; 
+    uniform float glowFactor; 
+    uniform float speed;
+    vec2 newUV(vec2 coord,float c,float s) 
+    { 
+      mat2 m=mat2(c,-s,s,c); 
+      return m*coord;
+    }
+    void main() {   
+      float t=speed*time;       
+      vec2 pivot=vec2(0.5,0.5); 
+      vec2 uv=newUV((vUv-pivot),cos(t),sin(t))+pivot; 
+      vec4 finalCol;
+      if(uv.x>0.&&uv.x<1.&&uv.y>0.&&uv.y<1.) 
+      { 
+        finalCol=vec4(color,opacity*alpha*texture2D( map, uv ).a);
+      }
+      gl_FragColor= clamp(finalCol,0.,1.); 
+      #include <logdepthbuf_fragment>
+    }
+        
+                `;
+
+		grounds.forEach(ground => {
+			var textureLoader = new TextureLoader();
+			var mainTex = textureLoader.load(ground.url);
+			mainTex.wrapS = mainTex.wrapT = THREE.RepeatWrapping;
+			var maskTex = textureLoader.load(ground.maskUrl);
+			maskTex.wrapS = maskTex.wrapT = THREE.RepeatWrapping;
+			var uniforms = {
+				map: { value: mainTex },
+				time: { value: 0. },
+				opacity: { value: ground.opacity },
+				repeatFactor: { value: [ground.repeatFactorX || 1, ground.repeatFactorY || 1] },
+				maskMap: { value: maskTex },
+				color: { value: new THREE.Color(ground.color) },
+				glowFactor: { value: ground.glowFactor },
+				speed: { value: 1 },
+				flowColor: { value: new THREE.Color(ground.flowColor) }
+			};
+			console.debug(uniforms);
+
+			var vertShader = groundReflect ? vertShaderReflect : vertShaderDefault;
+			var fragShader = groundReflect ? fragShaderReflect : (animationType === 'flow' ? fragShaderFlow : fragShaderRotation);
+			var shaderMaterial = new ShaderMaterial({
+				uniforms: uniforms,
+				vertexShader: vertShader,
+				fragmentShader: fragShader,
+				transparent: true,
+				depthWrite: false
+			});
+			shaderMaterial.roughness = 1;
+			var geometry = new THREE.PlaneGeometry( 100, 100 );
+			var mesh = new THREE.Mesh(geometry, shaderMaterial);
+			mesh.rotation.x = -Math.PI / 2;
+			this.scene.add( mesh );
+		});
+
+
+		groundReflect = true;
+		var uniforms = {
+			alpha: { value: 0 },
+			map: { value: null },
+			time: { value: 0. },
+			opacity: { value: 1 },
+			repeatFactor: { value: [1, 1] },
+			maskMap: { value: null },
+			color: { value: null },
+			glowFactor: { value: 1 },
+			speed: { value: 1 },
+			flowColor: { value: null }
+		};
+		console.debug(uniforms);
+
+		var vertShader = groundReflect ? vertShaderReflect : vertShaderDefault;
+		var fragShader = groundReflect ? fragShaderReflect : (animationType === 'flow' ? fragShaderFlow : fragShaderRotation);
+		var shaderMaterial = new ShaderMaterial({
+			uniforms: uniforms,
+			vertexShader: vertShader,
+			fragmentShader: fragShader,
+			transparent: true,
+			depthWrite: false
+		});
+		shaderMaterial.roughness = 0.1;
+		var geometry = new THREE.PlaneGeometry( 100, 100 );
+		var mesh = new THREE.Mesh(geometry, shaderMaterial);
+		mesh.rotation.x = -Math.PI / 2;
+		this.scene.add( mesh );
+
+
+	}
+
+	setMaterial() {
+		// TODO 分别处理材质
+		this.scene.traverse(obj => {
+			if (obj.type === 'Mesh' && obj.userData.name) {
+				const material = new THREE.MeshBasicMaterial( {color: 0x000000, side: THREE.DoubleSide} );
+				obj.material = material;
+			}
+		})
 	}
 
 	/**
@@ -527,6 +918,8 @@ export class Viewer {
 		const dispFolder = gui.addFolder('Display');
 		const envBackgroundCtrl = dispFolder.add(this.state, 'background');
 		envBackgroundCtrl.onChange(() => this.updateEnvironment());
+		const ritenCtrl = dispFolder.add(this.state, 'riten');
+		ritenCtrl.onChange(() => this.updateDisplay());
 		const autoRotateCtrl = dispFolder.add(this.state, 'autoRotate');
 		autoRotateCtrl.onChange(() => this.updateDisplay());
 		const wireframeCtrl = dispFolder.add(this.state, 'wireframe');

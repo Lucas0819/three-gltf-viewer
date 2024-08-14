@@ -1,0 +1,1314 @@
+{
+  "VERSION": "1.0.15",
+  "data": {
+    "enviroment": {
+      "type": "skybox",
+      "value": [
+        "skybox/systemIcons/reflection3/up.jpg",
+        "skybox/systemIcons/reflection3/rt.jpg",
+        "skybox/systemIcons/reflection3/lf.jpg",
+        "skybox/systemIcons/reflection3/fr.jpg",
+        "skybox/systemIcons/reflection3/dn.jpg",
+        "skybox/systemIcons/reflection3/bk.jpg"
+      ]
+    },
+    "resourcePrefix": "http://192.168.21.119:90/citybuilder_console/upload/",
+    "ground": {
+      "item": [
+        {
+          "code": "g1648710934744",
+          "name": "特效地面1620697703762",
+          "url": "ground/icon_20210625174703331_294105.png",
+          "color": "rgba(50,138,207,1)",
+          "opacity": 1,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "rgba(121,255,217,1)",
+          "glowFactor": 8.7,
+          "animationSpeed": 1,
+          "groundClearance": -1,
+          "repeatFactorX": 10,
+          "repeatFactorY": 10
+        },
+        {
+          "code": "g1648710934744",
+          "name": "特效地面1624614479485",
+          "url": "ground/icon_20210625174822322_937383.png",
+          "color": "rgba(50,138,207,1)",
+          "opacity": 0,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "rgba(133,255,255,1)",
+          "glowFactor": 3.9,
+          "animationSpeed": 0.5,
+          "groundClearance": 0,
+          "repeatFactorX": 10,
+          "repeatFactorY": 10
+        },
+        {
+          "code": "g1648710934744",
+          "name": "特效地面1624614663498",
+          "url": "ground/icon_20210625175116741_958937.png",
+          "color": "rgba(43,76,145,1)",
+          "opacity": 0,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "rgba(134,255,236,1)",
+          "glowFactor": 7.9,
+          "animationSpeed": 0.5,
+          "groundClearance": -1,
+          "repeatFactorX": 20,
+          "repeatFactorY": 20
+        },
+        {
+          "code": "g1648710934744",
+          "name": "特效地面1624614711238",
+          "url": "ground/icon_20210625175205515_73731.png",
+          "color": "rgba(51,120,183,1)",
+          "opacity": 1,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "#ffffff",
+          "glowFactor": 0,
+          "animationSpeed": 1,
+          "groundClearance": -1,
+          "repeatFactorX": 20,
+          "repeatFactorY": 20
+        },
+        {
+          "code": "g1648710934744",
+          "name": "特效地面1642833955417",
+          "url": "ground/icon_20210407163008223_378401.png",
+          "color": "rgba(24,24,24,1)",
+          "opacity": 0.97,
+          "repeatFactorX": 30,
+          "repeatFactorY": 30,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "#ffffff",
+          "glowFactor": 0,
+          "animationSpeed": 1,
+          "groundClearance": -3
+        },
+        {
+          "code": "g1648710934744",
+          "name": "特效地面1642834096513",
+          "url": "ground/systemIcons/地板面02.png",
+          "color": "rgba(8,13,22,1)",
+          "opacity": 0.6,
+          "repeatFactorX": 30,
+          "repeatFactorY": 30,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "#ffffff",
+          "glowFactor": 0,
+          "animationSpeed": 1,
+          "groundClearance": -3
+        }
+      ],
+      "groundReflect": true,
+      "reflectFactor": 0.89,
+      "enable": true,
+      "visibleOnEarth": true
+    },
+    "particle": {
+      "item": [
+        {
+          "code": "p1615535145391",
+          "name": "特效粒子1615535145391",
+          "id": "20091111djo61eeqj3owthaosvgyzdgp",
+          "content": {
+            "offsetY": 50,
+            "density": 0.01,
+            "offsetHeight": 0,
+            "listGroups": [
+              {
+                "iMaxParticleCount": 787,
+                "texture": {
+                  "url": "ground/systemIcons/光点黑白02.png"
+                },
+                "listEmitters": [
+                  {
+                    "listColor": [
+                      {
+                        "vec3Value": {
+                          "x": 0.6588235294117647,
+                          "y": 1,
+                          "z": 0.9921568627450981
+                        },
+                        "vec3Spread": {
+                          "x": 0.85,
+                          "y": 0.48,
+                          "z": 0.34
+                        }
+                      }
+                    ],
+                    "listSize": [
+                      {
+                        "fSpread": 30,
+                        "fValue": 5.843
+                      }
+                    ],
+                    "velocity": {
+                      "vec3Value": {
+                        "x": 0,
+                        "y": 6.390000000000001,
+                        "z": 0
+                      },
+                      "vec3Spread": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      }
+                    },
+                    "position": {
+                      "vec3Spread": {
+                        "x": 700.5105590820311,
+                        "y": 100,
+                        "z": 691.0789947509766
+                      }
+                    },
+                    "listOpacity": [
+                      {
+                        "fSpread": 0.374,
+                        "fValue": 0.544
+                      }
+                    ],
+                    "iParticleCount": 207
+                  }
+                ]
+              }
+            ],
+            "percent": 2,
+            "editCount": {
+              "listColor": 1,
+              "listSize": 1,
+              "listOpacity": 1
+            },
+            "height": 100
+          },
+          "url": "model/particle/20091111djo61eeqj3owthaosvgyzdgp/"
+        }
+      ],
+      "enable": true,
+      "visibleOnEarth": true
+    },
+    "version": "1.9.2",
+    "class": {
+      "FloorRoof": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.2,
+          "enable": true,
+          "metalness": 0.7,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": false,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(79,137,219,1)",
+          "1": "rgba(121,131,165,1)"
+        },
+        "opacity": 0.8,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Facade": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.1,
+          "enable": true,
+          "metalness": 0.8,
+          "specularFactor": 0
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "#ffffff",
+          "enable": true,
+          "opacity": 0.23,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0.15": "rgba(57,92,195,1)",
+          "0.33": "rgba(3,82,245,1)",
+          "0.97": "rgba(0,0,0,1)",
+          "0.73": "rgba(0,21,63,1)",
+          "0.84": "rgba(0,0,0,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Ground": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.4,
+          "enable": true,
+          "metalness": 0.84,
+          "specularFactor": 0
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(83,189,255,1)",
+          "enable": false,
+          "opacity": 0.47,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(1,4,6,1)",
+          "1": "rgba(1,31,53,0.5)"
+        },
+        "opacity": 0.5,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Tree": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.2,
+          "enable": false,
+          "metalness": 0.6,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "#00fff0",
+          "enable": false,
+          "opacity": 0.2,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "#00ffb2",
+          "0.36": "#2fb8d6",
+          "0.99": "#135e1f",
+          "0.66": "#128cd1"
+        },
+        "opacity": 0.18,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Thing": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": true,
+          "metalness": 0.76,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": false,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(74,135,223,1)",
+          "1": "rgba(74,145,235,1)"
+        },
+        "opacity": 0.73,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FloorCeiling": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.2,
+          "enable": false,
+          "metalness": 0.6,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "#ffffff",
+          "enable": false,
+          "opacity": 0.8300000000000001,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "1": "#233987",
+          "0.13": "#1b29aa"
+        },
+        "opacity": 0.85,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FloorManualWall": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.2,
+          "enable": true,
+          "metalness": 0.8,
+          "specularFactor": 0
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "#ffffff",
+          "enable": true,
+          "opacity": 0.56,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0.15": "rgba(198,207,233,1)",
+          "0.33": "rgba(48,139,255,1)",
+          "0.73": "rgba(72,116,193,1)",
+          "0.84": "rgba(5,6,8,1)",
+          "0.97": "rgba(40,86,149,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Door": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.6,
+          "enable": true,
+          "metalness": 0.1,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(137,255,255,1)",
+          "enable": true,
+          "opacity": 0.6,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(100,156,255,1)",
+          "1": "rgba(0,156,255,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 1,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Objects": {
+        "wireframe": {
+          "enable": false
+        },
+        "enable": true,
+        "opacity": 0.2
+      },
+      "FacadeMain": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.2,
+          "enable": true,
+          "metalness": 0.8,
+          "specularFactor": 0
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "#ffffff",
+          "enable": false,
+          "opacity": 0.56,
+          "glow": false
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0.15": "rgba(198,207,233,1)",
+          "0.33": "rgba(48,139,255,1)",
+          "0.73": "rgba(72,116,193,1)",
+          "0.84": "rgba(5,6,8,1)",
+          "0.97": "rgba(40,86,149,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FloorFloor": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": true,
+          "metalness": 0.3,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": false,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(14,21,60,1)",
+          "1": "rgba(69,80,100,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FacadeMainGlass": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": true,
+          "metalness": 0.76,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": false,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(4,104,255,1)",
+          "1": "rgba(0,176,255,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FacadeMainWin": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": true,
+          "metalness": 0.1,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,249,255,1)",
+          "enable": false,
+          "opacity": 0.93,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(87,248,255,1)",
+          "1": "rgba(0,255,245,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 1,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Logo": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": true,
+          "metalness": 0.76,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": true,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(4,104,255,1)",
+          "1": "rgba(0,176,255,1)"
+        },
+        "opacity": 0.71,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FacadeMainRoof": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.2,
+          "enable": true,
+          "metalness": 0.7,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": false,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(79,137,219,1)",
+          "1": "rgba(121,131,165,1)"
+        },
+        "opacity": 0.8,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FacadeMainDoor": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.6,
+          "enable": true,
+          "metalness": 0.1,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(137,255,255,1)",
+          "enable": true,
+          "opacity": 1,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(131,250,255,1)",
+          "1": "rgba(134,240,255,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 1,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "FacadeMainCeiling": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": true,
+          "metalness": 0.3,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,224,255,1)",
+          "enable": false,
+          "opacity": 0.33,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(149,159,209,1)",
+          "1": "rgba(69,80,100,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 0,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      },
+      "Window": {
+        "useColormap": true,
+        "reflection": {
+          "roughness": 0.76,
+          "enable": false,
+          "metalness": 0.1,
+          "specularFactor": 1
+        },
+        "color": {
+          "enable": false,
+          "value": "#888888"
+        },
+        "scrollSpeed": 0.003,
+        "useScrollTex": false,
+        "wireframe": {
+          "color": "rgba(102,249,255,1)",
+          "enable": true,
+          "opacity": 0.93,
+          "glow": true
+        },
+        "enable": true,
+        "scrollColor": "#ffffff",
+        "colormap": {
+          "0": "rgba(87,248,255,1)",
+          "1": "rgba(0,255,245,1)"
+        },
+        "opacity": 1,
+        "scrollTex": "uvMap/systemIcons/scroll.jpg",
+        "colormapIntensity": 1,
+        "glow": 1,
+        "colorImage": {
+          "color": "#888888",
+          "enable": false
+        },
+        "fresnel": {
+          "power": 0,
+          "inverse": false
+        }
+      }
+    },
+    "inner": {
+      "postEffect": {
+        "MiddleGlowBloom": {
+          "strength": 0.28,
+          "enable": true,
+          "threshold": 0.2,
+          "radius": 0.85
+        },
+        "chromaticAberration": {
+          "chromaFactor": 0.025,
+          "enable": false
+        },
+        "FXAA": {
+          "enable": false
+        },
+        "SmallGlowBloom": {
+          "strength": 0.28,
+          "enable": true,
+          "threshold": 0.2,
+          "radius": 0.85
+        },
+        "bloom": {
+          "strength": 0.14,
+          "enable": false,
+          "threshold": 0.7,
+          "radius": 0.4
+        },
+        "screenSpaceAmbientOcclusion": {
+          "intensity": 0.8,
+          "ignoreTransparent": false,
+          "enable": false,
+          "radius": 0.2,
+          "temporalFilter": true,
+          "quality": "medium"
+        },
+        "enable": true,
+        "screenSpaceReflection": {
+          "enable": true,
+          "minGlossiness": 0.2
+        },
+        "film": {
+          "enable": false,
+          "scanlinesIntensity": 0,
+          "scanlinesCount": 2048,
+          "noiseIntensity": 0.35,
+          "grayscale": false
+        },
+        "colorCorrection": {
+          "saturation": 1.1,
+          "brightness": 0,
+          "exposure": 0,
+          "enable": true,
+          "contrast": 1.1,
+          "gamma": 1
+        },
+        "vignetting": {
+          "enable": false,
+          "color": "0",
+          "offset": 1.5
+        },
+        "blurEdge": {
+          "enable": false,
+          "offset": 1.5
+        }
+      },
+      "background": {
+        "type": "image",
+        "value": "background/icon_20201225173803651_225213.jpg"
+      },
+      "lighting": {
+        "spotLights": [
+
+        ],
+        "distance": 2000,
+        "mainLight": {
+          "intensity": 0.8,
+          "shadow": false,
+          "color": "16772829",
+          "mainLightFlag": true,
+          "alpha": 0,
+          "beta": 0,
+          "shadowQuality": "medium",
+          "flag": true
+        },
+        "SecondaryLights": [
+          {
+            "intensity": 0.9,
+            "flag": true,
+            "shadow": false,
+            "color": "16772829",
+            "alpha": 138,
+            "title": "第二平行光",
+            "beta": 0,
+            "shadowQuality": "medium"
+          },
+          {
+            "intensity": 0,
+            "flag": true,
+            "shadow": false,
+            "color": "16777215",
+            "alpha": 0,
+            "title": "第三平行光",
+            "beta": 0,
+            "shadowQuality": "medium"
+          }
+        ],
+        "showHelper": false,
+        "ambientLight": {
+          "intensity": 0.3,
+          "color": "6447714",
+          "ambientFlag": true
+        },
+        "position": [
+          2178031.49,
+          4093163.9,
+          4379567.91
+        ],
+        "hemisphereLight": {
+          "intensity": 0,
+          "hemisphereFlag": true,
+          "color": "3310847",
+          "groundColor": 352511
+        },
+        "tertiaryLight": {
+          "intensity": 0,
+          "flag": true,
+          "shadow": false,
+          "color": "16777215",
+          "alpha": 0,
+          "title": "第三平行光",
+          "beta": 0,
+          "shadowQuality": "medium"
+        },
+        "secondaryLight": {
+          "intensity": 0.9,
+          "flag": true,
+          "shadow": false,
+          "color": "16772829",
+          "alpha": 138,
+          "title": "第二平行光",
+          "beta": 0,
+          "shadowQuality": "medium"
+        }
+      },
+      "fog": {
+        "color": "#808080",
+        "enable": false,
+        "far": 100,
+        "near": 10
+      }
+    },
+    "onExtFunc": "",
+    "offExtFunc": "",
+    "itemConfig": [
+
+    ],
+    "extFuncPreview": "",
+    "innerGround": {
+      "item": [
+        {
+          "code": "g1648711184165",
+          "name": "特效地面1620697703762",
+          "url": "ground/icon_20210625174703331_294105.png",
+          "color": "rgba(50,138,207,1)",
+          "opacity": 1,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "rgba(121,255,217,1)",
+          "glowFactor": 8.7,
+          "animationSpeed": 1,
+          "groundClearance": -1,
+          "repeatFactorX": 10,
+          "repeatFactorY": 10
+        },
+        {
+          "code": "g1648711184165",
+          "name": "特效地面1624614479485",
+          "url": "ground/icon_20210625174822322_937383.png",
+          "color": "rgba(50,138,207,1)",
+          "opacity": 0,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "rgba(133,255,255,1)",
+          "glowFactor": 3.9,
+          "animationSpeed": 0.5,
+          "groundClearance": 0,
+          "repeatFactorX": 10,
+          "repeatFactorY": 10
+        },
+        {
+          "code": "g1648711184165",
+          "name": "特效地面1624614663498",
+          "url": "ground/icon_20210625175116741_958937.png",
+          "color": "rgba(43,76,145,1)",
+          "opacity": 0,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "rgba(134,255,236,1)",
+          "glowFactor": 7.9,
+          "animationSpeed": 0.5,
+          "groundClearance": -1,
+          "repeatFactorX": 20,
+          "repeatFactorY": 20
+        },
+        {
+          "code": "g1648711184165",
+          "name": "特效地面1624614711238",
+          "url": "ground/icon_20210625175205515_73731.png",
+          "color": "rgba(51,120,183,1)",
+          "opacity": 1,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "#ffffff",
+          "glowFactor": 0,
+          "animationSpeed": 1,
+          "groundClearance": -1,
+          "repeatFactorX": 20,
+          "repeatFactorY": 20
+        },
+        {
+          "code": "g1648711184165",
+          "name": "特效地面1642833955417",
+          "url": "ground/icon_20210407163008223_378401.png",
+          "color": "rgba(24,24,24,1)",
+          "opacity": 0.97,
+          "repeatFactorX": 30,
+          "repeatFactorY": 30,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "#ffffff",
+          "glowFactor": 0,
+          "animationSpeed": 1,
+          "groundClearance": -3
+        },
+        {
+          "code": "g1648711184165",
+          "name": "特效地面1642834096513",
+          "url": "ground/systemIcons/地板面02.png",
+          "color": "rgba(8,13,22,1)",
+          "opacity": 0.6,
+          "repeatFactorX": 30,
+          "repeatFactorY": 30,
+          "maskUrl": "ground/systemIcons/光1.png",
+          "flowColor": "#ffffff",
+          "glowFactor": 0,
+          "animationSpeed": 1,
+          "groundClearance": -3
+        }
+      ],
+      "groundReflect": true,
+      "reflectFactor": 0.89,
+      "enable": true
+    },
+    "floors": {
+      "enable": false,
+      "item": [
+        {
+          "clonedFloors": {
+            "enable": true,
+            "name": "楼板效果1",
+            "floorHeight": 1,
+            "color": "#0000ff",
+            "scaleFactor": 1,
+            "opacity": 1,
+            "isInterlayerDisplay": false
+          },
+          "singleLines": {
+            "enable": false,
+            "name": "楼板效果1",
+            "floorHeight": 1,
+            "scaleFactor": 1,
+            "isInterlayerDisplay": false,
+            "lineHeight": 0.2,
+            "color": "#ff0000",
+            "opacity": 1
+          },
+          "doubleLines": {
+            "enable": false,
+            "name": "楼板效果1",
+            "floorHeight": 1,
+            "scaleFactor": 1,
+            "isInterlayerDisplay": false,
+            "lineHeight": 0.2,
+            "color": "#ff0000",
+            "opacity": 1
+          }
+        }
+      ]
+    },
+    "outer": {
+      "lighting": {
+        "showHelper": false,
+        "ambientLight": {
+          "intensity": 0.4,
+          "color": 16777215
+        },
+        "hemisphereLight": {
+          "intensity": 0,
+          "color": 16777215,
+          "groundColor": 2236962
+        },
+        "mainLight": {
+          "flag": true,
+          "shadow": false,
+          "shadowQuality": "ultra",
+          "shadowBias": 0,
+          "intensity": 0.5,
+          "color": 16777215,
+          "alpha": 30,
+          "beta": 30
+        },
+        "secondaryLight": {
+          "flag": true,
+          "shadow": false,
+          "shadowQuality": "ultra",
+          "shadowBias": 0,
+          "intensity": 0,
+          "color": 16777215,
+          "alpha": 138,
+          "beta": 0
+        },
+        "tertiaryLight": {
+          "flag": true,
+          "shadow": false,
+          "shadowQuality": "ultra",
+          "shadowBias": 0,
+          "intensity": 0,
+          "color": 16777215,
+          "alpha": 0,
+          "beta": 0
+        },
+        "distance": 2000
+      },
+      "postEffect": {
+        "SmallGlowBloom": {
+          "strength": 0.47,
+          "enable": true,
+          "threshold": 0.2,
+          "radius": 0.4
+        },
+        "GlowBloom": {
+          "strength": 0.52,
+          "enable": false,
+          "threshold": 0.2,
+          "radius": 0.4
+        },
+        "screenSpaceAmbientOcclusion": {
+          "intensity": 0.8,
+          "ignoreTransparent": false,
+          "enable": false,
+          "radius": 0.2,
+          "temporalFilter": true,
+          "quality": "medium"
+        },
+        "blurEdge": {
+          "offset": 1.5,
+          "enable": false
+        },
+        "screenSpaceReflection": {
+          "enable": true,
+          "minGlossiness": 0.2
+        },
+        "film": {
+          "enable": false,
+          "scanlinesIntensity": 0,
+          "scanlinesCount": 2048,
+          "noiseIntensity": 0.35,
+          "grayscale": false
+        },
+        "chromaticAberration": {
+          "chromaFactor": 0.025,
+          "enable": false
+        },
+        "MiddleGlowBloom": {
+          "strength": 1.5,
+          "enable": true,
+          "threshold": 0.2,
+          "radius": 0.4
+        },
+        "vignetting": {
+          "color": "0x318bcc",
+          "offset": 1.5,
+          "enable": false
+        },
+        "FXAA": {
+          "enable": false
+        },
+        "bloom": {
+          "strength": 0.14,
+          "enable": false,
+          "threshold": 0.7,
+          "radius": 0.4
+        },
+        "enable": true,
+        "colorCorrection": {
+          "saturation": 1.1,
+          "brightness": 0,
+          "exposure": 0,
+          "enable": true,
+          "contrast": 1.1,
+          "gamma": 1
+        }
+      },
+      "background": {
+        "type": "image",
+        "value": "background/icon_20201225173803651_225213.jpg"
+      }
+    },
+    "extFunc": ""
+  },
+  "itemConfig": [
+
+  ],
+  "configUI": [
+    {
+      "caption": "地图场景下特效地面显示",
+      "type": "bool",
+      "des": "data/ground/visibleOnEarth"
+    },
+    {
+      "caption": "地图场景下特效粒子显示",
+      "type": "bool",
+      "des": "data/particle/visibleOnEarth"
+    },
+    {
+      "caption": "环境光强度",
+      "type": "number",
+      "des": "data/outer/lighting/ambientLight/intensity"
+    },
+    {
+      "caption": "主光源1光强度",
+      "type": "number",
+      "des": "data/outer/lighting/mainLight/intensity"
+    },
+    {
+      "caption": "室外模型发光强度",
+      "type": "number",
+      "des": "data/outer/postEffect/MiddleGlowBloom/strength"
+    },
+    {
+      "caption": "室内模型发光强度",
+      "type": "number",
+      "des": "data/inner/postEffect/MiddleGlowBloom/strength"
+    }
+  ]
+}
